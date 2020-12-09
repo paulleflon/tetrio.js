@@ -1,7 +1,7 @@
 {
   "name": "tetrio.js",
   "version": "1.0.0",
-  "description": "A Promise-based module to interact with TETR.IO's TETRA CHANNEL API",
+  "description": "A promise-based module to interact with the TETR.IO API",
   "main": "build/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
