@@ -1,5 +1,8 @@
 # tetrio.js
 ## A promise-based module to interact with the TETR.IO API
+<div align="center">
+	<a href="https://nodei.co/npm/tetrio.js/"><img src="https://nodei.co/npm/tetrio.js.png"></a>
+</div>
 
 ### Installation
 Install tetrio.js with npm:
