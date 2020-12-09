@@ -1,6 +1,6 @@
 {
   "name": "tetrio.js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A promise-based module to interact with the TETR.IO API",
   "main": "build/index.js",
   "scripts": {
