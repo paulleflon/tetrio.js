@@ -72,5 +72,3 @@ client.getUser('hicka').then(user => {
 **tetrio.js, by Hickacou**
 
 [![Follow on GitHub](https://img.shields.io/github/followers/Hickacou?style=social)](https://github.com/Hickacou)
-
-[![Follow on Twitter](https://img.shields.io/twitter/follow/puddingmangue?style=social)](https://twitter.com/puddingmangue)
