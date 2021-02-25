@@ -17,7 +17,7 @@ npm install tetrio.js
 </div>
 
 ### Documentation
-Not-so-good-looking documentation can be found [here](https://hickacou.js.org/tetrio.js).
+Not-so-good-looking documentation can be found [here](https://hicka.dev/tetrio.js/).
 
 I recommend using [Visual Studio Code](https://code.visualstudio.com) to develop with tetrio.js. Built-in intellisense will give you useful informations and will prevent wrong uses.
 
