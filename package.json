@@ -1,6 +1,6 @@
 {
   "name": "tetrio.js",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A promise-based module to interact with the TETR.IO API",
   "main": "dist/index.js",
   "scripts": {
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Hickacou/tetrio.js.git"
+    "url": "git+https://github.com/hickatheworld/tetrio.js.git"
   },
   "keywords": [
     "tetrio",
@@ -21,11 +21,11 @@
   "author": "Hickacou",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Hickacou/tetrio.js/issues"
+    "url": "https://github.com/hickatheworld/tetrio.js/issues"
   },
-  "homepage": "https://github.com/Hickacou/tetrio.js#readme",
+  "homepage": "https://github.com/hickatheworld/tetrio.js#readme",
   "devDependencies": {
-    "@types/node": "^14.14.10",
+    "@types/node": "^14.17.1",
     "ts-node": "^9.0.0",
     "typedoc": "^0.19.2",
     "typescript": "^4.1.2"
