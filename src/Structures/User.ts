@@ -29,8 +29,8 @@ export default class User extends PartialUser implements UserInfo {
 		if ('avatar_revision' in data)
 			this.avatarUrl = 'https://tetr.io/user-content/avatars/' + this.id + '.jpg?rv=' + data.avatar_revision;
 		this.badges = new Map();
-		for (var i = 0; i < data.badges.length; i++) {
-			var gottenAt: Date | undefined = new Date(data.badges[i].ts);
+		for (let i = 0; i < data.badges.length; i++) {
+			let gottenAt: Date | undefined = new Date(data.badges[i].ts);
 			if (gottenAt.toString() === 'Invalid Date') gottenAt = undefined;
 			const badge: Badge = new Badge({
 				gottenAt,
@@ -65,18 +65,19 @@ export default class User extends PartialUser implements UserInfo {
 	}
 
 	/**
-	 * Fetches the user's Zen game infos
-	 */
-	public getZen(): Promise<ZenInfo> {
-		return this.client.getUserZen(this);
-	}
-
-	/**
 	 * Fetches the user's top 10 records in blitz or 40l
 	 * @param type The type of records to fetch
 	 */
 	public getBests(type: '40l' | 'blitz'): Promise<(Record40l | RecordBlitz)[]> {
 		return this.client.getUserBests(this.id, type);
+	}
+
+
+	/**
+	 * Fetches the user's Zen game infos
+	 */
+	public getZen(): Promise<ZenInfo> {
+		return this.client.getUserZen(this);
 	}
 
 }

@@ -14,7 +14,7 @@ export function isoToEmoji(country: ISOCountry): string {
  * @param user The UserResolvable object to resolve
  */
 export function resolveUser(user: UserResolvable): string {
-	var resolved: string = '';
+	let resolved: string = '';
 	if (typeof user === 'object' && ('id' in user || 'name' in user))
 		resolved = user.id || user.name.toLowerCase();
 

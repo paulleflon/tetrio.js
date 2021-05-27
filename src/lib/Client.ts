@@ -28,7 +28,7 @@ export default class Client {
 	 */
 	private async call(endpoint: string): Promise<object> {
 		return new Promise<object>((resolve, reject) => {
-			var path: string = '/api' + endpoint;
+			let path: string = '/api' + endpoint;
 			const req: ClientRequest = request({
 				headers: {
 					'Content-Type': 'application/json'
@@ -38,7 +38,7 @@ export default class Client {
 				path,
 				port: 443
 			}, (response) => {
-				var output: string = '';
+				let output: string = '';
 				response.setEncoding('utf8');
 				response.on('data', (chunk) => {
 					output += chunk;
@@ -108,8 +108,8 @@ export default class Client {
 		if (!res.success)
 			throw new TetraChannelAPIError(res.error);
 		else {
-			var arr: (Record40l | RecordBlitz)[] = [];
-			for (var i = 0; i < res.data.records.length; i++) {
+			let arr: (Record40l | RecordBlitz)[] = [];
+			for (let i = 0; i < res.data.records.length; i++) {
 				const raw = res.data.records[i];
 				arr.push(new ((type === '40l') ? Record40l : RecordBlitz)(raw, this));
 			}
@@ -126,8 +126,8 @@ export default class Client {
 		if (!res.success)
 			throw new TetraChannelAPIError(res.error);
 		else {
-			var arr: (Record40l | RecordBlitz)[] = [];
-			for (var i = 0; i < res.data.records.length; i++) {
+			let arr: (Record40l | RecordBlitz)[] = [];
+			for (let i = 0; i < res.data.records.length; i++) {
 				const raw = res.data.records[i];
 				if (filter && raw.gameType !== filter) continue;
 				arr.push(new ((raw.gameType === '40l') ? Record40l : RecordBlitz)(raw, this));
@@ -193,7 +193,7 @@ export default class Client {
 	public async getLeagueLeaderboard(options: LeagueLeaderboardFetchingOptions = {}): Promise<PartialUser[]> {
 		if ('after' in options && 'before' in options)
 			throw new TetraChannelAPIError('May not combine both `before` and `after` parameters');
-		var endpoint = '/users/lists/league';
+		let endpoint = '/users/lists/league';
 		if (options.all)
 			endpoint += '/all';
 		else if ('before' in options)
@@ -212,8 +212,8 @@ export default class Client {
 		if (!res.success)
 			throw new TetraChannelAPIError(res.error);
 		else {
-			var arr: PartialUser[] = [];
-			for (var i = 0; i < res.data.users.length; i++) {
+			let arr: PartialUser[] = [];
+			for (let i = 0; i < res.data.users.length; i++) {
 				const raw = res.data.users[i];
 				arr.push(new PartialUser(raw, this));
 			}
@@ -228,7 +228,7 @@ export default class Client {
 	public async getXPLeaderboard(options: XPLeaderboardFetchingOptions = {}): Promise<PartialUser[]> {
 		if ('after' in options && 'before' in options)
 			throw new TetraChannelAPIError('May not combine both `before` and `after` parameters');
-		var endpoint = '/users/lists/league';
+		let endpoint = '/users/lists/league';
 		if ('before' in options)
 			endpoint += '?before=' + options.before;
 		else if ('after' in options)
@@ -245,8 +245,8 @@ export default class Client {
 		if (!res.success)
 			throw new TetraChannelAPIError(res.error);
 		else {
-			var arr: PartialUser[] = [];
-			for (var i = 0; i < res.data.users.length; i++) {
+			let arr: PartialUser[] = [];
+			for (let i = 0; i < res.data.users.length; i++) {
 				const raw = res.data.users[i];
 				arr.push(new PartialUser(raw, this));
 			}
@@ -263,8 +263,8 @@ export default class Client {
 		if (!res.success)
 			throw new TetraChannelAPIError(res.error);
 		else {
-			var arr: (Record40l | RecordBlitz)[] = [];
-			for (var i = 0; i < res.data.records.length; i++) {
+			let arr: (Record40l | RecordBlitz)[] = [];
+			for (let i = 0; i < res.data.records.length; i++) {
 				const raw = res.data.records[i];
 				arr.push(new ((raw.gameType === '40l') ? Record40l : RecordBlitz)(raw, this));
 			}
@@ -277,7 +277,7 @@ export default class Client {
 	 */
 	public async getNews(options: NewsFetchingOptions = {}): Promise<NewsManager> {
 
-		var endpoint: string = '/news/';
+		let endpoint: string = '/news/';
 		if (options.userID)
 			endpoint += 'user_' + options.userID;
 		else if (!options.all)

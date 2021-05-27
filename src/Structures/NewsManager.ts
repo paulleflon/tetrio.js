@@ -14,7 +14,7 @@ export default class NewsManager {
 		this.leaderboard = [];
 		this.personalBest = [];
 		this.rankup = [];
-		for (var i = 0; i < data.length; i++) {
+		for (let i = 0; i < data.length; i++) {
 			const raw: any = data[i];
 			const base: BaseNews = {
 				at: new Date(raw.ts),
@@ -22,7 +22,7 @@ export default class NewsManager {
 				type: raw.type,
 				username: raw.data.username
 			};
-			var news;
+			let news;
 			switch (base.type) {
 				case 'badge':
 					this.client.getUser('hicka').then(user => {
