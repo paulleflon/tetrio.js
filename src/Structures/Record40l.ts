@@ -1,5 +1,6 @@
 import Client from '../lib/Client';
 import Record from './Record';
+
 /**
  * A TETR.IO 40l record
  */

@@ -14,6 +14,7 @@ import TetraChannelAPIError from '../Structures/TetraChannelAPIError';
 import User from '../Structures/User';
 import { UserResolvable } from '../Types/UserResolvable';
 import { resolveUser } from './util';
+
 export default class Client {
 	public readonly forceValue: boolean;
 	private hostname: string;

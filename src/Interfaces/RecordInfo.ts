@@ -1,6 +1,5 @@
 import ClearsInfo from './ClearsInfo';
 import FinesseInfo from './FinesseInfo';
-import PartialUserInfo from './PartialUserInfo';
 
 /**
  * Infos about a TETR.IO record

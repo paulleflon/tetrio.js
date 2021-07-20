@@ -1,5 +1,3 @@
-import User from './User';
-
 export default class Badge {
 	/** The badge's id and icon file name  */
 	public id: string;

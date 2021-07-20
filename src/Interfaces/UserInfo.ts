@@ -1,5 +1,4 @@
 import Badge from '../Structures/Badge';
-import User from '../Structures/User';
 import PartialUserInfo from './PartialUserInfo';
 
 /**

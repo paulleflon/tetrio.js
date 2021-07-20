@@ -1,7 +1,8 @@
-import Client from '../lib/Client';
 import ClearsInfo from '../Interfaces/ClearsInfo';
 import FinesseInfo from '../Interfaces/FinesseInfo';
 import RecordInfo from '../Interfaces/RecordInfo';
+import Client from '../lib/Client';
+
 /**
  * A TETR.IO blitz or 40l record
  */

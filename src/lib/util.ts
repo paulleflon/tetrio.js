@@ -1,5 +1,6 @@
 import { ISOCountry } from '../Types/ISOCountry';
 import { UserResolvable } from '../Types/UserResolvable';
+
 /**
  * Converts a an ISO country code to the corresponding flag emoji
  * @param country An ISO 3166-1 country code. 
