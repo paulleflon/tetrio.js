@@ -1,7 +1,7 @@
 /**
  * Infos about clears of a TETR.IO game
  */
-export default interface ClearsInfo {
+interface ClearsInfo {
 	/** The amount of All Clears */
 	allClears: number;
 	/** The amount of doubles */
@@ -27,3 +27,5 @@ export default interface ClearsInfo {
 	/** The amount of T-spins Triple */
 	tspinTriples: number;
 }
+
+export default ClearsInfo;

@@ -1,7 +1,7 @@
 /**
  * Instantiation options of a Tetrio.js Client
  */
-export default interface ClientOptions {
+interface ClientOptions {
 	/**
 	 * Whether some optionnal properties must provide the raw value given by the API. For example:
 	 *  - `-1` instead of `undefined` for hidden user statistics
@@ -10,3 +10,5 @@ export default interface ClientOptions {
 	 */
 	forceValue?: boolean;
 }
+
+export default ClientOptions;

@@ -1,10 +1,11 @@
 import ClearsInfo from './ClearsInfo';
 import FinesseInfo from './FinesseInfo';
 import PartialUserInfo from './PartialUserInfo';
+
 /**
  * Infos about a TETR.IO record
  */
-export default interface RecordInfo {
+interface RecordInfo {
 	/** The back-to-back value at the end of the game. */
 	btb: number;
 	/** The clears data */
@@ -42,3 +43,5 @@ export default interface RecordInfo {
 	/** The name of the user who got the record */
 	username: string;
 }
+
+export default RecordInfo;

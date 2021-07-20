@@ -5,7 +5,7 @@ import PartialUserInfo from './PartialUserInfo';
 /**
  * Infos about a TETR.IO user
  */
-export default interface UserInfo extends PartialUserInfo {
+interface UserInfo extends PartialUserInfo {
 	/** The user's avatar Url */
 	avatarUrl?: string;
 	/** The user's badges */
@@ -29,3 +29,5 @@ export default interface UserInfo extends PartialUserInfo {
 	/** The user's amount of xp */
 	xp: number;
 }
+
+export default UserInfo;

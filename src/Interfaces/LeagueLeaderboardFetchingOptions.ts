@@ -1,10 +1,11 @@
 import { ISOCountry } from '../Types/ISOCountry';
+
 /**
  * Options to fetch the TETRA LEAGUE Leaderboard
  * 
  * **The `before` and `after` argument may not be combined.** 
  */
-export default interface LeagueLeaderboardFetchingOptions {
+interface LeagueLeaderboardFetchingOptions {
 	/** Whether to fetch the whole leaderboard. 
 	 * 
 	 * If true, `after`, `before` and `limit` options are ignored. 
@@ -19,3 +20,5 @@ export default interface LeagueLeaderboardFetchingOptions {
 	/** The amount of entries to return, between 1 and 100. 50 by default */
 	limit?: number;
 }
+
+export default LeagueLeaderboardFetchingOptions;

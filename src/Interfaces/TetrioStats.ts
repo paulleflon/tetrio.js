@@ -1,4 +1,4 @@
-export default interface TetrioStats {
+interface TetrioStats {
 	/** The amount of anonymous accounts on the server */
 	anonCount: number;
 	/** The amount of games played across all users, including both off- and online modes, excluding games that were not completed (e.g. retries) */
@@ -20,3 +20,5 @@ export default interface TetrioStats {
 	/** The amount of replays stored on the server */
 	replayCount: number;
 }
+
+export default TetrioStats;

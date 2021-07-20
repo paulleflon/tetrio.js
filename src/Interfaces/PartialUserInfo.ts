@@ -3,7 +3,7 @@ import { ISOCountry } from '../Types/ISOCountry';
 import { UserRole } from '../Types/UserRole';
 import UserLeagueInfo from './UserLeagueInfo';
 
-export default interface PartialUserInfo {
+interface PartialUserInfo {
 	/** Whether the user is a bot */
 	bot?: boolean
 	/** The ISO 3166-1 country code of the user */
@@ -25,3 +25,5 @@ export default interface PartialUserInfo {
 	/** Whether the user is verified */
 	verified: boolean;
 }
+
+export default PartialUserInfo;

@@ -1,8 +1,9 @@
 import { TetraLeagueRank } from '../Types/TetraLeagueRank';
+
 /**
  * TETRA LEAGUE infos of a TETR.IO user
  */
-export default interface UserLeagueInfo {
+interface UserLeagueInfo {
 	/** The user's average Attack Per Minute over the last 10 games  */
 	apm?: number;
 	/** Whether the user's RD is increasing */
@@ -34,3 +35,5 @@ export default interface UserLeagueInfo {
 	/** The user's TETRA LEAGUE win r	ate (gamesWon/gamesPlayed) */
 	winRate: number;
 }
+
+export default UserLeagueInfo;
