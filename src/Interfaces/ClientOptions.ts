@@ -8,5 +8,5 @@ export default interface ClientOptions {
 	 *  - `'Z'` instead of `undefined` for unranked TETRA LEAGUE players
 	 * @default false
 	 */
-	forceValue?: boolean,
+	forceValue?: boolean;
 }
