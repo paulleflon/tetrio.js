@@ -27,9 +27,9 @@ export default class Client {
 	 * @param endpoint The API endpoint to request
 	 * @param scope The scope of the endpoint to request (eg. /users/:user/records)
 	 */
-	private async call(endpoint: string): Promise<object> {
-		return new Promise<object>((resolve, reject) => {
-			let path: string = '/api' + endpoint;
+	private async call(endpoint: string): Promise<Record<string, unknown>> {
+		return new Promise<Record<string, unknown>>((resolve, reject) => {
+			const path = '/api' + endpoint;
 			const req: ClientRequest = request({
 				headers: {
 					'Content-Type': 'application/json'
@@ -39,7 +39,7 @@ export default class Client {
 				path,
 				port: 443
 			}, (response) => {
-				let output: string = '';
+				let output = '';
 				response.setEncoding('utf8');
 				response.on('data', (chunk) => {
 					output += chunk;
@@ -60,7 +60,7 @@ export default class Client {
 	 * @param user The user to fetch informations form
 	 * @param force Whether to force an API call even if a User object is provided as argument.
 	 */
-	public async getUser(user: UserResolvable, force: boolean = false): Promise<User> {
+	public async getUser(user: UserResolvable, force = false): Promise<User> {
 		if (user instanceof User && !force)
 			return user;
 
@@ -77,7 +77,7 @@ export default class Client {
 	 * @param user The user to fetch the records
 	 * @param type The type of the records to fetch
 	 */
-	public async getUserBest(user: UserResolvable, type: '40l' | 'blitz' | 'all' = 'all'): Promise<(Record40l | RecordBlitz) | { "40l": Record40l, blitz: RecordBlitz }> {
+	public async getUserBest(user: UserResolvable, type: '40l' | 'blitz' | 'all' = 'all'): Promise<(Record40l | RecordBlitz) | { '40l': Record40l, blitz: RecordBlitz }> {
 		const id: string = resolveUser(user);
 		const res: any = await this.call('/users/' + id + '/records');
 		if (!res.success)
@@ -109,7 +109,7 @@ export default class Client {
 		if (!res.success)
 			throw new TetraChannelAPIError(res.error);
 		else {
-			let arr: (Record40l | RecordBlitz)[] = [];
+			const arr: (Record40l | RecordBlitz)[] = [];
 			for (let i = 0; i < res.data.records.length; i++) {
 				const raw = res.data.records[i];
 				arr.push(new ((type === '40l') ? Record40l : RecordBlitz)(raw, this));
@@ -127,7 +127,7 @@ export default class Client {
 		if (!res.success)
 			throw new TetraChannelAPIError(res.error);
 		else {
-			let arr: (Record40l | RecordBlitz)[] = [];
+			const arr: (Record40l | RecordBlitz)[] = [];
 			for (let i = 0; i < res.data.records.length; i++) {
 				const raw = res.data.records[i];
 				if (filter && raw.gameType !== filter) continue;
@@ -213,7 +213,7 @@ export default class Client {
 		if (!res.success)
 			throw new TetraChannelAPIError(res.error);
 		else {
-			let arr: PartialUser[] = [];
+			const arr: PartialUser[] = [];
 			for (let i = 0; i < res.data.users.length; i++) {
 				const raw = res.data.users[i];
 				arr.push(new PartialUser(raw, this));
@@ -246,7 +246,7 @@ export default class Client {
 		if (!res.success)
 			throw new TetraChannelAPIError(res.error);
 		else {
-			let arr: PartialUser[] = [];
+			const arr: PartialUser[] = [];
 			for (let i = 0; i < res.data.users.length; i++) {
 				const raw = res.data.users[i];
 				arr.push(new PartialUser(raw, this));
@@ -264,7 +264,7 @@ export default class Client {
 		if (!res.success)
 			throw new TetraChannelAPIError(res.error);
 		else {
-			let arr: (Record40l | RecordBlitz)[] = [];
+			const arr: (Record40l | RecordBlitz)[] = [];
 			for (let i = 0; i < res.data.records.length; i++) {
 				const raw = res.data.records[i];
 				arr.push(new ((raw.gameType === '40l') ? Record40l : RecordBlitz)(raw, this));
@@ -278,7 +278,7 @@ export default class Client {
 	 */
 	public async getNews(options: NewsFetchingOptions = {}): Promise<NewsManager> {
 
-		let endpoint: string = '/news/';
+		let endpoint = '/news/';
 		if (options.userID)
 			endpoint += 'user_' + options.userID;
 		else if (!options.all)

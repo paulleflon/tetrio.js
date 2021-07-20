@@ -40,7 +40,7 @@ export default abstract class Record implements RecordInfo {
 			tspinTriples: data.endcontext.clears.tspintriples,
 			tspins: data.endcontext.clears.realtspins,
 			tspinSingles: data.endcontext.clears.tspinsingles,
-		}
+		};
 		this.combo = data.endcontext.combo;
 		this.createdAt = new Date(data.ts);
 		if (data.endcontext.finesse) {
