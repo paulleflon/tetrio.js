@@ -5,6 +5,7 @@ import Badge from './Badge';
 import PartialUser from './PartialUser';
 import Record40l from './Record40l';
 import RecordBlitz from './RecordBlitz';
+
 export default class User extends PartialUser implements UserInfo {
 	public avatarUrl?: string;
 	public badges: Map<string, Badge>;
@@ -36,7 +37,7 @@ export default class User extends PartialUser implements UserInfo {
 				gottenAt,
 				id: data.badges[i].id,
 				label: data.badges[i].label,
-				username: this.name
+				user: this.name
 			});
 			this.badges.set(badge.id, badge);
 		}

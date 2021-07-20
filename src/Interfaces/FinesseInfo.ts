@@ -1,11 +1,13 @@
 /**
  * A user's finesse during a TETR.IO game
  */
-export default interface FinesseInfo {
+interface FinesseInfo {
 	/** The finesse combo */
-	combo: number,
+	combo: number;
 	/** The amount of finesse faults */
-	faults: number,
+	faults: number;
 	/** The amount of pieces placed with perfect finesse */
-	perfects: number,
-};
+	perfects: number;
+}
+
+export default FinesseInfo;

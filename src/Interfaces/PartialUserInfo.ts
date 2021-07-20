@@ -3,25 +3,27 @@ import { ISOCountry } from '../Types/ISOCountry';
 import { UserRole } from '../Types/UserRole';
 import UserLeagueInfo from './UserLeagueInfo';
 
-export default interface PartialUserInfo {
+interface PartialUserInfo {
 	/** Whether the user is a bot */
 	bot?: boolean
 	/** The ISO 3166-1 country code of the user */
-	country?: ISOCountry,
+	country?: ISOCountry;
 	/** The user's country flag emoji */
-	flag?: string,
+	flag?: string;
 	/** The user's MongoID */
-	id: string,
+	id: string;
 	/** The user's TETRA LEAGUE info */
-	league: UserLeagueInfo,
+	league: UserLeagueInfo;
 	/** If the user is a bot, the user who owns it */
-	master?: User,
+	master?: User;
 	/** The user's username */
-	name: string,
+	name: string;
 	/** The user's role */
-	role: UserRole,
+	role: UserRole;
 	/** Whether the user is a supporter */
-	supporter: boolean,
+	supporter: boolean;
 	/** Whether the user is verified */
-	verified: boolean,
+	verified: boolean;
 }
+
+export default PartialUserInfo;

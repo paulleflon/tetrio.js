@@ -1,29 +1,31 @@
 /**
  * Infos about clears of a TETR.IO game
  */
-export default interface ClearsInfo {
+interface ClearsInfo {
 	/** The amount of All Clears */
-	allClears: number,
+	allClears: number;
 	/** The amount of doubles */
-	doubles: number,
+	doubles: number;
 	/** The amount of mini T-spins */
-	miniTspins: number,
+	miniTspins: number;
 	/** The amount of mini T-spins Double */
-	miniTspinDoubles: number,
+	miniTspinDoubles: number;
 	/** The amount of mini T-spins Single */
-	miniTspinSingles: number,
+	miniTspinSingles: number;
 	/** The amount of quads */
-	quads: number,
+	quads: number;
 	/** The amount of singles */
-	singles: number,
+	singles: number;
 	/** The amount of triples */
-	triples: number,
+	triples: number;
 	/** The amount of T-spins */
-	tspins: number,
+	tspins: number;
 	/** The amount of T-spins Double */
-	tspinDoubles: number,
+	tspinDoubles: number;
 	/** The amount of T-spins Single */
-	tspinSingles: number,
+	tspinSingles: number;
 	/** The amount of T-spins Triple */
-	tspinTriples: number,
+	tspinTriples: number;
 }
+
+export default ClearsInfo;

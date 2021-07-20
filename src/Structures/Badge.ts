@@ -1,5 +1,3 @@
-import User from './User';
-
 export default class Badge {
 	/** The badge's id and icon file name  */
 	public id: string;
@@ -9,8 +7,8 @@ export default class Badge {
 	public gottenAt?: Date;
 	/** The badge's icon file url */
 	public iconUrl: string;
-	/** The user the badge belongs to */
-	public user: User;
+	/** The name of the user the badge belongs to */
+	public user: string;
 	constructor(data: any) {
 		this.id = data.id;
 		this.label = data.label;

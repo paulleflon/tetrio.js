@@ -1,5 +1,6 @@
 import { ISOCountry } from '../Types/ISOCountry';
 import { UserResolvable } from '../Types/UserResolvable';
+
 /**
  * Converts a an ISO country code to the corresponding flag emoji
  * @param country An ISO 3166-1 country code. 
@@ -14,7 +15,7 @@ export function isoToEmoji(country: ISOCountry): string {
  * @param user The UserResolvable object to resolve
  */
 export function resolveUser(user: UserResolvable): string {
-	let resolved: string = '';
+	let resolved = '';
 	if (typeof user === 'object' && ('id' in user || 'name' in user))
 		resolved = user.id || user.name.toLowerCase();
 
