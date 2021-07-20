@@ -25,18 +25,16 @@ export default class NewsManager {
 			let news;
 			switch (base.type) {
 				case 'badge':
-					this.client.getUser('hicka').then(user => {
-						const badge: Badge = new Badge({
-							id: raw.data.type,
-							label: raw.data.label,
-							gottenAt: base.at,
-							user: this,
-						});
-						news = Object.assign(base, {
-							data: badge
-						}) as BadgeNews;
-						this.badge.push(news);
+					const badge: Badge = new Badge({
+						id: raw.data.type,
+						label: raw.data.label,
+						gottenAt: base.at,
+						user: this,
 					});
+					news = Object.assign(base, {
+						data: badge
+					}) as BadgeNews;
+					this.badge.push(news);
 					break;
 				case 'leaderboard':
 				case 'personalbest':
