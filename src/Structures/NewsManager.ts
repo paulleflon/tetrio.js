@@ -29,7 +29,7 @@ export default class NewsManager {
 						id: raw.data.type,
 						label: raw.data.label,
 						gottenAt: base.at,
-						user: this,
+						user: raw.data.username,
 					});
 					news = Object.assign(base, {
 						data: badge

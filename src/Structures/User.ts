@@ -36,7 +36,7 @@ export default class User extends PartialUser implements UserInfo {
 				gottenAt,
 				id: data.badges[i].id,
 				label: data.badges[i].label,
-				username: this.name
+				user: this.name
 			});
 			this.badges.set(badge.id, badge);
 		}
