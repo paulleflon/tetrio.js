@@ -13,10 +13,12 @@ export default class User extends PartialUser implements UserInfo {
 	public bannerUrl?: string;
 	public bio?: string;
 	public createdAt?: Date;
+	public friendCount: number;
 	public gamesPlayed?: number;
 	public gameTime?: number;
 	public gamesWon?: number;
 	public master?: User;
+	public supporterTier: number;
 	public winRate?: number;
 	public xp: number;
 	constructor(data: any, client: Client) {
@@ -42,12 +44,14 @@ export default class User extends PartialUser implements UserInfo {
 			this.badges.set(badge.id, badge);
 		}
 		this.badStanding = data.badstanding === true;
+		this.friendCount = data.friend_count;
 		if (data.gamesplayed > -1 || client.forceValue)
 			this.gamesPlayed = data.gamesplayed;
 		if (data.gametime > -1 || client.forceValue)
 			this.gameTime = data.gametime;
 		if (data.gameswon > -1 || client.forceValue)
 			this.gamesWon = data.gameswon;
+		this.supporterTier = data.supporter_tier;
 		this.winRate = (this.gamesPlayed && this.gamesWon && this.gamesPlayed > 0)
 			? this.gamesWon / this.gamesPlayed
 			: (client.forceValue)
